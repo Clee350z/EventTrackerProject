@@ -1,5 +1,6 @@
 package com.skilldistillery.musicFestival.entities;
 
+import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -15,6 +16,12 @@ public class Festival {
 	private int id;
 	
 	private String name;
+	
+	private Date date;
+	
+	private Boolean handicapAccess;
+	
+	private String venue;
 
 	public int getId() {
 		return id;
@@ -30,6 +37,30 @@ public class Festival {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public Boolean getHandicapAccess() {
+		return handicapAccess;
+	}
+
+	public void setHandicapAccess(Boolean handicapAccess) {
+		this.handicapAccess = handicapAccess;
+	}
+
+	public String getVenue() {
+		return venue;
+	}
+
+	public void setVenue(String venue) {
+		this.venue = venue;
 	}
 
 	public Festival() {
@@ -55,6 +86,9 @@ public class Festival {
 
 	@Override
 	public String toString() {
-		return "Festival [id=" + id + ", name=" + name + "]";
+		return "Festival [id=" + id + ", name=" + name + ", date=" + date + ", handicapAccess=" + handicapAccess
+				+ ", venue=" + venue + "]";
 	}
+
+
 }

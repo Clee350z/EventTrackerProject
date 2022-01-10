@@ -2,7 +2,6 @@ package com.skilldistillery.musicFestival.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -19,7 +18,7 @@ class FestivalTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
 	private Festival festival;
-	
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		emf = Persistence.createEntityManagerFactory("JPAMusicFestivals");
@@ -42,13 +41,12 @@ class FestivalTest {
 		festival = null;
 	}
 
-
-	
 	@Test
 	void test_Festival_mapping() {
-	assertNotNull(festival);
-	assertEquals("Global Dance", festival.getName());;
-	
+		assertNotNull(festival);
+		assertEquals("Global Dance", festival.getName());
+		;
+
 	}
 
 }
