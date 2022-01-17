@@ -45,8 +45,9 @@ class FestivalTest {
 	void test_Festival_mapping() {
 		assertNotNull(festival);
 		assertEquals("Global Dance", festival.getName());
-		;
 
 	}
+	
+
 
 }

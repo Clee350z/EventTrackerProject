@@ -6,4 +6,5 @@ import com.skilldistillery.musicFestival.entities.Festival;
 
 public interface FestivalRepository extends JpaRepository<Festival, Integer> {
 
+	Festival findByName(String name);
 }

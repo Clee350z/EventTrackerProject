@@ -14,4 +14,6 @@ public interface FestivalService {
 	Festival createFestival(Festival festival);
 	
 	boolean deleteById(int festivalId);
+
+	Festival getFestivalByName(String festivalName);
 }

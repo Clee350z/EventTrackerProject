@@ -27,6 +27,11 @@ public class FestivalServiceImpl implements FestivalService {
 	}
 
 	@Override
+	public Festival getFestivalByName(String festivalName) {
+		return festivalRepo.findByName(festivalName);
+	}
+	
+	@Override
 	public Festival update(Integer festivalId, Festival festival) {
 		Festival fest = festivalRepo.getById(festivalId);
 		fest = festivalRepo.saveAndFlush(festival);
@@ -56,5 +61,7 @@ public class FestivalServiceImpl implements FestivalService {
 		}
 		return deleted;
 	}
+	
+	
 
 }

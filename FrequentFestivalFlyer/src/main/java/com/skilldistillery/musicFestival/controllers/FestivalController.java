@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skilldistillery.musicFestival.entities.Festival;
+import com.skilldistillery.musicFestival.repositories.FestivalRepository;
 import com.skilldistillery.musicFestival.services.FestivalService;
 
 @RestController
@@ -34,6 +35,17 @@ public class FestivalController {
 		Festival fest = festivalService.getFestivalById(festId);
 				return fest;
 	}
+	
+	@GetMapping("festivals/{festivalName}")
+	public Festival festivalsByName(@PathVariable String festivalName, HttpServletResponse res){
+		Festival fest = festivalService.getFestivalByName(festivalName);
+		if(fest == null) {
+			res.setStatus(404);
+		}
+		return fest;
+	}
+	
+	
 	@PutMapping("update/{festivalId}")
 	public Festival updateFestival(@PathVariable Integer festivalId, @RequestBody Festival festival, HttpServletResponse res) {
 		try {
@@ -59,14 +71,14 @@ public class FestivalController {
 			hsres.setHeader("Testing", url.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.err.println("Soemthing went wrong");
+			System.err.println("Something went wrong");
 			hsres.setStatus(400);
 			festival = null;
 		}
 		return festival;
 	}
 	
-	@DeleteMapping("festivals/{festivalId}")
+	@DeleteMapping("delete/{festivalId}")
 	public void deleteFestival(Integer festivalId, HttpServletResponse res) {
 		try {
 			if(festivalService.deleteById(festivalId)) {

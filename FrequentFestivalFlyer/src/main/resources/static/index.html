@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Frequent Festival Flyer</title>
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+
+	<h1>Frequent Festival Flyer</h1>
+
+	<h3>Too Many festivals? Keep Track Here</h3>
+
+	<form name="festivalForm">
+		<input type="text" name="festivalName" placeholder="i.e... EDC">
+		<button name="lookup">Search Name</button>
+	</form>
+
+	<div id="output">
+	<h4>Festival Info</h4>
+		<div id="festivalData">
+				<button name="update">Update</button>
+			
+		</div>
+	</div>
+	
+	<h3> Add a festival here!</h3>
+	<form name="newFestivalForm">
+		<label for="festivalName">Name</label>
+		<input type="text" name="festivalName" placeholder="i.e... EDC"><br> 
+			<label for="festivalDate">Date</label>
+			<input type="date" name="festivalDate"  min="2020-12-30" max="2051-01-01"><br> 
+			<label for="venue"> Venue</label>
+			<input type="text" name="venue" placeholder="i.e... Red Rocks Ampitheatre"><br> 
+			<label for="handicapAccess">Handicap Friendly?</label>
+			<input type="checkbox" name="handicapAccess" checked><br>
+		<button name="submit" type ="submit" >Add Festival</button>
+	</form>
+
+
+	<h3> List All Festivals!</h3>
+	<form name="allFestivals">
+		<button name="lookup">All Festivals</button>
+	</form>
+
+	<h3> Edit Festival</h3>
+		<form name="updateFestivalForm">
+			<label for="festivalId">ID</label>
+			<input type="number" name="festivalId" placeholder="Ref. all festivals for id"><br>
+					<label for="festivalName">Name</label>
+		<input type="text" name="festivalName" placeholder="i.e... EDC"><br> 
+			<label for="festivalDate">Date</label>
+			<input type="date" name="festivalDate"  min="2020-12-30" max="2051-01-01"><br> 
+			<label for="venue"> Venue</label>
+			<input type="text" name="venue" placeholder="i.e... Red Rocks Ampitheatre"><br> 
+			<label for="handicapAccess">Handicap Friendly?</label>
+			<input type="checkbox" name="handicapAccess" checked><br>
+		<button name="update" type ="submit" >Update Festival</button>
+		</form>
+
+</body>
+</html>
